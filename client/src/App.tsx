@@ -21,7 +21,7 @@ function Router() {
       </Switch>
     </WouterRouter>
     // --- FIN DEL CAMBIO ---
-E  );
+  );
 }
 
 function App() {
