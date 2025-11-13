@@ -1,4 +1,8 @@
-import { Switch, Route } from "wouter";
+import { 
+  Switch, 
+  Route, 
+  Router as WouterRouter // <-- 1. Importa el Router principal (y lo renombra)
+} from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,23 +11,28 @@ import CurriculumMap from "@/pages/curriculum-map";
 import NotFound from "@/pages/not-found";
 
 function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={CurriculumMap} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+  return (
+    // --- INICIO DEL CAMBIO ---
+    // 2. Envuelve tu Switch con el Router, pasándole el basename
+    <WouterRouter base="/mapa-lidia-2/">
+      <Switch>
+        <Route path="/" component={CurriculumMap} />
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
+    // --- FIN DEL CAMBIO ---
+E  );
 }
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Router />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default App;
