@@ -1,8 +1,8 @@
-#Mapa Lidia v0.1.0-beta
+#Mapa Lidia v0.1.0-beta#
 
-##[*Link*](https://sr-sebastian.github.io/mapa-lidia-2/)
+##[*Link*](https://sr-sebastian.github.io/mapa-lidia-2/)##
 
-###Road-map:
+###Road-map:###
 - Agregar "Highlight" de materia que seleccionas
 - Añadir descripciones
 - Añadir link o desplegable a material de apoyo
